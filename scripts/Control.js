@@ -1,11 +1,11 @@
 "use strict";
 
-describe("ClockCtrl", function() {
-	var scope, ctrl;
+describe("Control", function() {
+	var scope, control;
 
 	beforeEach(inject(function($rootScope, $controller) {
 		scope = $rootScope.$new();
-		ctrl = $controller(ClockCtrl, { $scope: scope });
+		control = $controller(Control, { $scope: scope });
 	}));
 
 	it("should create a 'time' model containing a Date", function() {

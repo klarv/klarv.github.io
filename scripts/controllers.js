@@ -1,4 +1,4 @@
-function ClockCtrl($scope, $timeout) {
+function Control($scope, $timeout) {
 
 	$scope.resetTime = function() {
 		$scope.time = new Date();
@@ -12,34 +12,34 @@ function ClockCtrl($scope, $timeout) {
 	update();
 }
 
-function AlarmCtrl($scope) {
+function AlarmC($scope) {
 	var newAlarm = $scope.newAlarm = {};
-	var alarms = $scope.alarms = [
+	var alarm = $scope.alarm = [
 		{
-			title: "Wake up",
-			time: new Date(1970, 1, 1, 6, 0, 1),
+			title: "Do Test and Make it work",
+			time: new Date(2015, 1, 1, 11, 0, 1),
 			repeat: 3
 		},
 		{
-			title: "Other thing",
-			time: new Date(1970, 1, 1, 6, 30, 34),
-			schedule: ["monday", "wednesday"]
+			title: "Hopefully get in",
+			time: new Date(2015, 1, 1, 9, 0, 1),
+			schedule: ["at some point"]
 		},
 		{
-			title: "Pay Rent",
-			time: new Date(1970, 1, 1, 17, 15, 20),
-			schedule: [25, 26, 27, 28]
+			title: "Celebrate",
+			time: new Date(2015, 1, 1, 21, 0, 1),
+			schedule: ["All night long"]
 		}
 	];
 
-	$scope.remove = function(alarm) {
-		alarms.splice(alarms.indexOf(alarm), 1);
+	$scope.remove = function(alarms) {
+		alarm.splice(alarm.indexOf(alarms), 1);
 	};
 	$scope.create = function() {
 		var parts = newAlarm.time.split(":");
-		alarms.push({
+		alarm.push({
 			title: newAlarm.title,
-			time: new Date(1970, 1, 1, parts[0], parts[1])
+			time: new Date(2015, 1, 1, parts[0], parts[1])
 		});
 		delete newAlarm.title;
 		delete newAlarm.time;
