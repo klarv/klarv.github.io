@@ -1,4 +1,4 @@
-angular.module("Clock", []).
+angular.module("alarmClock", []).
 	config(["$routeProvider", function($routeProvider) {
-		$routeProvider.otherwise({ templateUrl: "setAlarm.html", controller: AlarmC });
+		$routeProvider.otherwise({ templateUrl: "setAlarm.html", controller: AlarmCtrl });
 	}]);

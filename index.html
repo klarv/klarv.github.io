@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="Clock">
+<html ng-app="alarmClock">
 	<head>
     	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title></title>
@@ -9,7 +9,7 @@
 		<script src="scripts/controllers.js"></script>
 		<script src="scripts/app.js"></script>
 	</head>
-	<body ng-controller="Control">
+	<body ng-controller="alarmClock">
     	<div class="container">
             	<h1 class="current-time"></h1>
 				<span class="hour">{{time | date:'HH'}}</span>
@@ -17,7 +17,7 @@
 				<span class="minute">{{time | date:'mm'}}</span>
                 <span class="colon">:</span>
 				<span class="second">{{time | date:'ss'}}</span>
-			<ul class="alarm" ng-view>
+			<ul class="alarms" ng-view>
 			</ul>
         </div>
 	</body>

@@ -1,4 +1,4 @@
-function Control($scope, $timeout) {
+function ClockCtrl($scope, $timeout) {
 
 	$scope.resetTime = function() {
 		$scope.time = new Date();
@@ -12,9 +12,9 @@ function Control($scope, $timeout) {
 	update();
 }
 
-function AlarmC($scope) {
+function AlarmCtrl($scope) {
 	var newAlarm = $scope.newAlarm = {};
-	var alarm = $scope.alarm = [
+	var alarms = $scope.alarms = [
 		{
 			title: "Do Test and Make it work",
 			time: new Date(2015, 1, 1, 11, 0, 1),
@@ -32,16 +32,18 @@ function AlarmC($scope) {
 		}
 	];
 
-	$scope.remove = function(alarms) {
-		alarm.splice(alarm.indexOf(alarms), 1);
+	$scope.remove = function(alarm) {
+		alarms.splice(alarms.indexOf(alarm), 1);
 	};
 	$scope.create = function() {
 		var parts = newAlarm.time.split(":");
-		alarm.push({
+		alarms.push({
 			title: newAlarm.title,
-			time: new Date(2015, 1, 1, parts[0], parts[1])
+			time: new Date(1970, 1, 1, parts[0], parts[1])
 		});
 		delete newAlarm.title;
 		delete newAlarm.time;
 	};
 }
+
+			
